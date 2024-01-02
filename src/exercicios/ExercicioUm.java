@@ -26,7 +26,6 @@ public class ExercicioUm {
         System.out.printf("Rounded (three decimal places): %.3f\n", measure);
         Locale.setDefault(Locale.US);
         System.out.println("US decimal point: " + measure);
-        sou
 
     }
 }
