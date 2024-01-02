@@ -7,7 +7,7 @@ public class ExercicioUm {
         String product1 = "Computer";
         String product2 = "Office desk";
 
-        int age = 30;
+        byte age = 30;
         int code = 5290;
         char gender = 'F';
 
@@ -17,18 +17,16 @@ public class ExercicioUm {
 
 
         System.out.println("Products: ");
-        System.out.println(product1 + ", which price is $ " + price1);
-        System.out.println(product2 + ", which price is $ " + price2);
+        System.out.printf("%s, which product price is $ %.2f%n", product1, price1);
+        System.out.printf("%s, which product price is $ %.2f%n", product2, price2);
 
-        System.out.println("Record: " + age + " years old, code " + code + " and gender: " + gender);
+        System.out.printf("Record: %d years old, code %d and gender: %c%n", age, code, gender);
 
-        // Measured with eight decimal places: measure
-        // Rounded (three decimal places): measure
-        // US decimal point: measure
         System.out.printf("Measure with eight decimal places: %.8f\n", measure);
         System.out.printf("Rounded (three decimal places): %.3f\n", measure);
         Locale.setDefault(Locale.US);
         System.out.println("US decimal point: " + measure);
+        sou
 
     }
 }
