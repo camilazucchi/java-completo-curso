@@ -26,5 +26,7 @@ public class ExercicioOito {
 
         System.out.printf("Valor para pagamento: R$ %.2f", valorTotal);
 
+        sc.close();
+
     }
 }
