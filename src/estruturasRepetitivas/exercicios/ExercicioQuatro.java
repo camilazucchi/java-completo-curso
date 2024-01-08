@@ -17,5 +17,7 @@ public class ExercicioQuatro {
                 System.out.println(i);
             }
         }
+
+        sc.close();
     }
 }
