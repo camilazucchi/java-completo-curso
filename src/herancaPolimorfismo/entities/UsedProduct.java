@@ -22,8 +22,13 @@ public class UsedProduct extends Product {
 
     @Override
     public String priceTag() {
-        // TODO: Utilizar StringBuilder para uma leitura mais rápida
-        return getName() + " (used) $ " + String.format("%.2f", getPrice()) + " (Manufacture date: " + manufactureDate.format(DateTimeFormatter.ofPattern("dd/MM/yyyy")) + ")";
+        StringBuilder stb = new StringBuilder();
+        stb.append(getName());
+        stb.append(" (used) $ ").append(String.format("%.2f", getPrice()));
+        stb.append(" (Manufacture date: ")
+                .append(manufactureDate.format(DateTimeFormatter.ofPattern("dd/MM/yyyy")))
+                .append(")");
+        return stb.toString();
     }
 
 }

@@ -23,7 +23,11 @@ public class ImportedProduct extends Product {
 
     @Override
     public String priceTag() {
-        // TODO: Utilizar StringBuilder para uma leitura mais rápida
-        return getName() + " $ " + String.format("%.2f", totalPrice())  + " (Customs fee: $ " + String.format("%.2f", customsFee)  + ")";
+        // Mudança de String para StringBuilder:
+        StringBuilder stb = new StringBuilder();
+        stb.append(getName());
+        stb.append( " $ ").append(String.format("%.2f", totalPrice()));
+        stb.append( " (Customs fee: $ " ).append(String.format("%.2f", customsFee)).append(")");
+        return stb.toString();
     }
 }
