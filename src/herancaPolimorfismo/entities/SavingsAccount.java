@@ -1,6 +1,7 @@
 package herancaPolimorfismo.entities;
 
 public class SavingsAccount extends Account {
+    // "final" não pode ser herdada!
 
     private Double interestRate;
 

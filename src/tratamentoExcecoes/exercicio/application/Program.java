@@ -20,10 +20,12 @@ public class Program {
         double initialBalance = userInput.nextDouble();
         System.out.print("Withdraw limit: ");
         double withdrawLimit = userInput.nextDouble();
+
         Account account = new Account(accountNumber, accountHolder, initialBalance, withdrawLimit);
         System.out.println();
         System.out.println(account.showAccountInfo());
         System.out.println();
+
         System.out.print("Enter the amount you wish to withdraw from your account: ");
         double amount = userInput.nextDouble();
         try {

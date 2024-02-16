@@ -36,8 +36,16 @@ public class Account {
         return balance;
     }
 
+    public void setBalance(Double balance) {
+        this.balance = balance;
+    }
+
     public Double getWithdrawLimit() {
         return withdrawLimit;
+    }
+
+    public void setWithdrawLimit(Double withdrawLimit) {
+        this.withdrawLimit = withdrawLimit;
     }
 
     public String showAccountInfo() {
@@ -56,11 +64,6 @@ public class Account {
         balance += amount;
     }
 
-    public void withdraw(double amount) throws WithdrawException {
-        validateWithdraw(amount);
-        balance -= amount;
-    }
-
     public void validateWithdraw(double amount) throws WithdrawException {
         if (balance <= getWithdrawLimit()) {
             throw new WithdrawException("Insufficient funds.");
@@ -69,6 +72,12 @@ public class Account {
             throw new WithdrawException("The amount you entered exceeds the withdraw limit.");
         }
     }
+
+    public void withdraw(double amount) throws WithdrawException {
+        validateWithdraw(amount);
+        balance -= amount;
+    }
+
 
 
 }
