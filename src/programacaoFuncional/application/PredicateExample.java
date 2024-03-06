@@ -2,6 +2,7 @@ package programacaoFuncional.application;
 
 import programacaoFuncional.entities.Product;
 import programacaoFuncional.util.PriceUpdate;
+import programacaoFuncional.util.UpperCaseName;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -24,6 +25,14 @@ public class PredicateExample {
         // Atualiza o preço para todos os produtos:
         productList.forEach(new PriceUpdate());
         productList.forEach(System.out::println);
+
+        // Usaremos a função map:
+        /* A função “map” (não confundir com a estrutura de dados map) é uma função que aplica uma função a todos os
+        elementos de uma stream. */
+        List<String> productsNames = productList.stream().map(new UpperCaseName()).toList();
+        /* Acima, convertemos a lista para stream e convertemos novamente para lista usando "toList()". */
+        productsNames.forEach(System.out::println);
+
 
     }
 }
