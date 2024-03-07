@@ -26,5 +26,20 @@ public class ExampleTwo {
                 * função que recebe dois argumentos e gera um resultado. */
                 .reduce(0, Integer::sum);
         System.out.println("Utilizando reduce: Sum = " + sum);
+
+        List<Integer> newList = list.stream()
+                // O método "filter()" filtra nossa lista.
+                .filter(x -> x % 2 == 0)
+                .map(x -> x * 10)
+                /* O método "toList()" é um método de conveniência adicionado ao Java 16, que permite converter um
+                * fluxo (stream) para uma lista diretamente, sem a necessidade de chamar explicitamente o método
+                * "collect(Collectors.toList())".
+                * Usar "toList()" é mais simples e reduz a quantidade de código, tornando o código mais limpo e fácil
+                * de entender. Portanto, o IntelliJ sugere isso como uma prática recomendada quando estivermos
+                * trabalhando com coleções em Java 16 e versões posteriores.
+                * Caso estejamos usando uma versão antiga do java que não suporta "toList()", então
+                * "collect(Collectors.toList())" será a opção apropriada. */
+                .toList();
+        System.out.println("Utilizando filter e map: " + Arrays.toString(newList.toArray()));
     }
 }
