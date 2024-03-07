@@ -19,6 +19,12 @@ public class ExampleTwo {
         * Já o método 2, converte a coleção "st1" em um array usando "toArray()" e, em seguida, usa "Arrays.toString()"
         * para imprimir uma representação de string do array no console. Isso resulta em uma única linha de saída, onde
         * todos os elementos são impressos em uma linha, separados por vírgulas e envolvidos por colchetes. */
-        System.out.println(Arrays.toString(st1.toArray()));
+        System.out.println("Utilizando map: " + Arrays.toString(st1.toArray()));
+
+        int sum = list.stream()
+                /* O método "reduce()" pega o elemento inicial, que será o elemento neutro de operação e depois uma
+                * função que recebe dois argumentos e gera um resultado. */
+                .reduce(0, Integer::sum);
+        System.out.println("Utilizando reduce: Sum = " + sum);
     }
 }
